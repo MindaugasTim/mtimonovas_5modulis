@@ -35,43 +35,39 @@ public class uogiene {
 					mazy++;
 					n-=1;
 					x=0;
-					System.out.println("1if "+n);
 				}
 				if(n>1){
 				n -= 2;
 				mazy+=2;
 				j++;
-				System.out.println("1 "+n);
 				}
 			}
-			if(vizitai[j].equals(2)){
+			else if(vizitai[j].equals(2)){
 				if(n<=4){
 					switch (n){
-					case 1: karl+=1; n=0; x=0; System.out.println("2if1 "+n); break;
-					case 2: karl+=2; n=0; x=0; System.out.println("2if2 "+n); break;
-					case 3: karl+=3; n=0; x=0; System.out.println("2if3 "+n); break;
-					case 4: karl+=4; n=0; x=0; System.out.println("2if4 "+n); break;				
+					case 1: karl+=1; n=0; x=0; break;
+					case 2: karl+=2; n=0; x=0; break;
+					case 3: karl+=3; n=0; x=0; break;
+					case 4: karl+=4; n=0; x=0; break;				
 					}
 				}
 				if(n>4){
 				n-=5;
 				karl+=5;
 				j++;
-				System.out.println("2 "+n);
 				}
 			}
-			if(vizitai[j].equals(3)){
+			else if(vizitai[j].equals(3)){
 				if(n<=2){
 					switch (n){
-					case 1: frek+=1; n=0; x=0; System.out.println("3if1 "+n); break;
-					case 2: frek+=2; n=0; x=0; System.out.println("3if2 "+n); break;
+					case 1: frek+=1; n=0; x=0; break;
+					case 2: frek+=2; n=0; x=0; break;
 					}
 				}
 				if(n>2){
 				n-=3;
 				frek+=3;
 				j++;
-				System.out.println("3 "+n);
 				}
 			}
 			else if(n==0){
