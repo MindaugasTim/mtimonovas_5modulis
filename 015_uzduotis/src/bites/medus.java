@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class medus {
 
@@ -14,13 +14,10 @@ public class medus {
 	
 	public static void main(String[] args) {
 		BufferedReader br = null;
-		FileReader fr = null;
 		FileWriter fw = null;
 		try {
-			fr = new FileReader(input);
-			br = new BufferedReader(fr);
-			String line = null;
 			br = new BufferedReader(new FileReader(input));
+			String line = null, vyd;
 			fw = new FileWriter(output);
 			
 			int kg = 0, lietDien = 0, palankDien = 0; double vid = 0;
@@ -50,21 +47,18 @@ public class medus {
 				}
 			}
 			vid = (double)kg / (double)n;
-
+			NumberFormat formatter = new DecimalFormat("#.000");
+			vyd = formatter.format(vid);
 			fw.write("Per "+n+" dienø bitës suneðë "+kg+" kilogramø medaus"
 					+"\nLietingø dienø kiekis " + lietDien
 					+"\nMeduneðiui palankiausiø dienø kiekis "+palankDien
-					+"\nVidutiniðkai bitës per dienà prineðë medaus "+vid+"00 kg.");
-			//vidutiniskai kintamasis - perfect format.. :)
-			
+					+"\nVidutiniðkai bitës per dienà prineðë medaus "+vyd+" kg.");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				if (br != null)
 					br.close();
-				if (fr != null)
-					fr.close();
 				if (fw != null)
 					fw.close();
 			} catch (IOException ex) {
